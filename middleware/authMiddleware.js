@@ -2,12 +2,15 @@ import { UnauthenticatedError , UnauthorizedError} from "../errors/CustomError.j
 import jwt from "jsonwebtoken";
 export const authenticateUser = (req, res, next) => {
   const { token } = req.cookies;
-  if (!token) throw new UnauthenticatedError("unauthenticated user");
+  console.log("token",token)
+  debugger
+  // if (!token) throw new UnauthenticatedError("unauthenticated user token does not exist");
   try {
     const {userId,role} = verifyJWT(token);
     req.user = {userId,role}
     next();
   } catch (err) {
+    console.log(err)
     throw new UnauthenticatedError("unauthenticated user");
   }
 };
@@ -19,6 +22,7 @@ export const verifyJWT = (token) => {
 
 export const authorizedPermissions = (...roles) => {
     return (req,res,next) => {
+      console.log('current role isFinite',req.user.role)
         if(!roles.includes(req.user.role)) {
             throw new UnauthorizedError('unauthorized user')
         }

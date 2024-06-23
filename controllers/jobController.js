@@ -15,6 +15,8 @@ import {
 export const getAllJobs = async (req, res) => {
   // console.log(req.user.userId);
   const jobs = await Job.find({createdBy:req.user.userId});
+  console.log("jobs",jobs);
+  debugger
   res.status(StatusCodes.OK).json({ jobs });
 };
 

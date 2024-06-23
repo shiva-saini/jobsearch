@@ -10,7 +10,7 @@ const NavLinks = ({isBigSidebar}) => {
     <div>
         <div className="nav-links">
             {links.map((link) => {
-              console.log(link);
+              // console.log(link);
               const { text, path, icon } = link;
               return (
                 <NavLink

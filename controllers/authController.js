@@ -36,7 +36,7 @@ export const loginUser = async (req, res) => {
         expires:new Date(Date.now() + oneDay),
         secure:process.env.NODE_ENV==='production',
   })
-  res.status(StatusCodes.OK).json({ message:'user created' });
+  res.status(StatusCodes.OK).json({ message:'user logged in' });
 };
 
 

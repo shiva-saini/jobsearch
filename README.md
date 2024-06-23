@@ -1,3 +1,24 @@
+error --> 
+ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+
+
+ solution ---> Try doing this:- MongoDB Atlas -> NetworkAccess -> Edit -> Allow Any
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//db connection -> https://cloud.mongodb.com/v2/663f0cc9bdd74c40ab714048#/metrics/replicaSet/663f0ddc45191d3908e9a59c/explorer/JOBIFY/jobs/find
 # React + Vite
 ------> cookies are only sent back to the same server.
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

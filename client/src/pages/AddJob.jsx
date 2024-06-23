@@ -12,7 +12,7 @@ import FormRowSelect from '../components/FormRowSelect'
 export const action = async ({request}) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData)
-  console.log('data is ', data)
+  // console.log('data is ', data)
   try{
     await customFetch.post('/jobs',data)
     toast.success('job created successfully')
@@ -23,7 +23,7 @@ export const action = async ({request}) => {
 }
 const AddJob = () => {
   const { user } = useOutletContext();
-  console.log(user);
+  // console.log(user);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   return (
