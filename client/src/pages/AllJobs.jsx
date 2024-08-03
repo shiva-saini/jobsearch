@@ -8,11 +8,10 @@ import axios from 'axios';
 
 export const loader = async () => {
   try{
-    //  const {data} = await customFetch.get('/jobs');
-    const data = await fetch("http://localhost:5100/api/v1/jobs");
-     console.log(" this is data", await data.json());
-     debugger
-     return data;
+    const {data} = await customFetch.get('/jobs');
+    console.log("this is data", data);
+    debugger
+    return {data};
   }catch(error) {
     return toast.error(error.response.data.msg)
   }
@@ -20,13 +19,13 @@ export const loader = async () => {
 
 
 const AllJobsContext = createContext();
-
+debugger
 const AllJobs = () => {
   const {data} = useLoaderData();
   return (
     <AllJobsContext.Provider value={data}>
      <SearchContainer/>
-     {/* <JobsContainer/> */}
+     <JobsContainer/>
     </AllJobsContext.Provider>
   )
 }

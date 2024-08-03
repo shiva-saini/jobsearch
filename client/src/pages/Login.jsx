@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 export const action = async ({request}) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData)
-
   try{
     await customFetch.post('/auth/login',data)
     toast.success('loggedin successfully')
@@ -28,8 +27,8 @@ const Login = () => {
       <Form method='post' className='form'>
         <Logo/>
         <h4>Login Page</h4> 
-        <FormRow type='email' name='email' labelText="email" defaultValue="shvi@gmail.com"/>
-        <FormRow type='password' name='password' labelText="password" defaultValue="shvia@123"/>
+        <FormRow type='email' name='email' labelText="email" defaultValue="shiva@gmail.com"/>
+        <FormRow type='password' name='password' labelText="password" defaultValue="shiva@123"/>
         <button type="submit" className='btn btn-block' disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'submit'}
         </button>

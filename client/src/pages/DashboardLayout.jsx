@@ -7,13 +7,13 @@ import { useState } from "react";
 import { checkDefaultTheme } from "../App";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 
 export const loader = async () => {
   try{
-    const data = await customFetch.get('/users/current-user');
-  return data;
-
+    const {data} = await customFetch.get('/users/current-user');
+    return {data};
   }catch(err){
     return redirect('/')
   }
@@ -30,7 +30,7 @@ const DashboardContext = createContext();
 // }
 const DashboardLayout = ({}) => {
   const { user } = useLoaderData()?.data;
-  // console.log(user);
+  console.log(user);
   const navigate = useNavigate();
   // console.log(user)
   const [showSidebar,setShowSidebar] = useState(false);

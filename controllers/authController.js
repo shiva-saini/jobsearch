@@ -1,4 +1,4 @@
-import { RESET_CONTENT, StatusCodes } from "http-status-codes";
+import { StatusCodes } from "http-status-codes";
 import {
   NotFoundError,
   BadRequestError,

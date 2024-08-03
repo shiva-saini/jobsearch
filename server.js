@@ -31,10 +31,13 @@ app.get("/", (req, res) => {
 
 
 //job router middleware
+debugger
 app.use("/api/v1/jobs",authenticateUser, jobRouter);
+debugger
 app.use("/api/v1/auth", authRouter);
+debugger
 app.use('/api/v1/users',authenticateUser,userRouter)
-
+debugger
 //not found
 app.use("*", (req, res) => {
   res.status(404).json({ Message: "not found" });

@@ -8,7 +8,7 @@ const Error = () => {
   if(e.status == 404){
     return <Wrapper>
       <div>
-      <img src={img} alt="" srcset="" />
+      <img src={img} alt="" srcSet="" />
       <h3>Ohh! Page not found!</h3>
       <p>We can't seem to find page you are looking for.</p>
       <Link to='/dashboard'>Back to dashboard</Link>

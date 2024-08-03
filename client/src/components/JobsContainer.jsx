@@ -4,6 +4,7 @@ import Wrapper from '../assets/wrappers/JobsContainer'
 import { useAllJobsContext } from '../pages/AllJobs'
 const JobsContainer = () => {
     const data = useAllJobsContext();
+    console.log("data from jobs container is ", data)
     debugger
     const { jobs } = data;
     if(jobs === null) return
